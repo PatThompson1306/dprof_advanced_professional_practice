@@ -1,0 +1,504 @@
+\documentclass[12pt,a4paper,oneside]{report}
+
+% Encoding and language
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+% Fonts and typography
+\usepackage{lmodern}
+\hbadness=10000
+\hfuzz=\maxdimen
+
+% Page layout
+\usepackage[a4paper,margin=25mm]{geometry}
+
+% Graphics and tables
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{array}
+\usepackage{longtable}
+
+% Math
+\usepackage{amsmath,amssymb,amsthm}
+
+% URLs and hyperlinks
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\Urlmuskip=0mu plus 1mu\relax
+
+% Code listings
+\usepackage{listings}
+\usepackage{xcolor}
+\lstset{
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  backgroundcolor=\color{gray!10},
+  commentstyle=\color{green!60!black},
+  keywordstyle=\color{blue},
+  stringstyle=\color{red}
+}
+
+% Bibliography — Harvard / author–year
+\usepackage{natbib}
+\citestyle{authoryear}
+\bibliographystyle{agsm}
+
+% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\leftmark}
+\rhead{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{27.2pt}
+
+% Spacing and formatting
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{dirtytalk}
+
+% Glossaries and acronyms
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\input{acronym-definitions.tex}
+
+% Custom commands
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+% Document metadata
+\title{\vspace{1cm}A Generic Report Template\\\large Subtitle}
+\author{Your Name}
+\date{\today}
+
+\begin{document}
+
+% Title page
+\begin{titlepage}
+  \centering
+  {\scshape\LARGE Indicative Contextual Research – People, Processes and a Conceptualisation of the Research Challenge \par}
+  \vspace{1.5cm}
+  {\huge\bfseries Advanced Professional Practice - MOD006046 \par}
+  \vspace{0.5cm}
+  {\Large Patrick THOMPSON - 2433678 \par}
+  \vspace{2cm}
+  \vfill      
+  \includegraphics[width=0.25\textwidth]{images/aru_logo.png}     
+  \vspace{2cm}\\
+  \HRule\\[0.4cm]
+  {\large \today \par}
+\end{titlepage}
+
+% Abstract
+\begin{abstract} % 300 words
+\par \textbf{Purpose:} lorem ipsum...This paper critically reflects on...
+
+\par \textbf{Method:} lorem ipsum...Using [reflective framework] and engaging with literature on...
+
+\par \textbf{Findings:} lorem ipsum...The analysis reveals...
+
+\par \textbf{Conclusion:} lorem ipsum...These insights lead to research questions focused on...
+\end{abstract}
+% Table of contents and other lists
+\tableofcontents
+\printglossary[type=\acronymtype]
+\listoffigures
+%\listoftables
+
+\clearpage
+
+%--------S.1 Introduction--------
+\chapter{Introduction}  
+\label{ch:introduction}
+This paper critically reflects on my professional context using a reflective framework to identify and shape an initial research challenge.
+
+Chapter \ref{ch:critical-reflection-on-professional-practice} reflects upon this context using the Gibbs' Reflective Cycle, incorporating the "What Model".
+
+Chapter \ref{ch:critical-analysis-of-practice-and-context} considers broader organisational and structural factors.
+
+Chapter \ref{ch:critical-interrogation-and-validation-of-the-problem} explores cross-sector perspectives and existing biases.
+
+Chapter \ref{ch:research-focus-and-questions} defines the emergent research focus and questions.
+
+Finally, Chapter \ref{ch:ethical-considerations} considers ethical implications.
+
+\section{Professional context overview}
+\label{sec:professional-context-overview}
+I am a police Detective Chief Inspector working as part of a national policing capability called the \gls{toex}.
+
+\gls{toex} supports police forces in the investigation and analysis of organised criminality, this includes crimes such as human trafficking and modern slavery, and the organised sexual exploitation of children, (\gls{cse}).
+
+My core role within \gls{toex} is to lead on the delivery of technical capabilities that can be used to bolster investigative efforts in policing these crimes.  Additionally, I hold a secondary role where I provide operational supervision and oversight to officers and staff working across serious crime inquiries.
+
+These two roles have given me experience in both the delivery of technology to support investigatory practice, whilst simultaneously experiencing significant technical literacy and technical implementation challenges across operational policing, \citep{thompson2021missed}.
+
+\section{Initial problem statement}
+\label{sec:initial-problem-statement}
+UK policing has teams which are dedicated to the investigation of offending against children.  These teams range from investigative teams that deal with contact offending, \citep{collegeo2022caiu}, teams that investigate online grooming and the sharing of \gls{csam}, \citep{hmicfrs2024polit} and teams that operate in covert roles to identify and disrupt offenders, \citep{npcc2024ucol}.
+
+Academic reporting, \citep{choi2024digital}, and \citep{finkelhor2024prevalence}, alongside practice leads in the \gls{npcc}, \citep{CPAI2025}, confirms the increasing scale of reports of sexual offending against children.
+
+Whilst a proportion of offenders who view and share \gls{csam} do not progress to contact sexual offending, \citep{krone2017trajectories}, a cohort of offenders will progress from online offending to contact offending via a grooming process, \citep{soldino2024criminological}.  
+
+Across policing, this offending is primarily identified as a result of "post fact", where instances of \gls{csam} offending or contact offending have already taken place and a child has been abused.
+
+Experience within my current role suggests that advances in \gls{nlp}, may provide opportunities to identify triggers within grooming conversations that point to impending physical abuse, and thus provide opportunities to safeguard children before they are harmed.
+
+It is this gap between the technical potential that exists and the stretched operational capability in the \gls{cse} context that I wish to explore further; I believe that this gap exposes limitations around proactive safeguarding opportunities, and results in policing retaining a predominantly reactive posture in identifying offenders only after harm has occurred.  
+
+An initial problem statement can therefore be defined as:
+
+\textit{How can \gls{nlp} be utilised to identify precursors of contact sex offending against children, thus enhancing proactive safeguarding opportunities within policing?}
+
+%--------S.2 Critical Reflection on Professional Practice--------
+\chapter{Critical reflection on professional practice}  
+\label{ch:critical-reflection-on-professional-practice}
+I joined the police service in March 2001.  Initial training involved a classroom session detailing the \textbf{incident learning cycle}.  The lesson encouraged new recruits to reflect on their policing experiences by asking four questions after attending at a challenging incident.
+
+\begin{enumerate}
+    \item What happened?
+    \item What does that mean?
+    \item So what?
+    \item Now what?
+\end{enumerate}
+
+This incident learning cycle presents as a  modified representation of Kolb's experiential learning cycle, \citep{kolb1984experiential}, and can be seen in figure \ref{fig:incident-learning-cycle}.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/modified_kolb.png}
+    \caption{Incident learning cycle adapted from Kolb's experiential learning cycle}
+    \label{fig:incident-learning-cycle}
+\end{figure}
+
+This cycle, whilst encouraging officers to engage in a dialogic process of reflection with themselves and with peers, could not be considered to be full critical reflection as the reflective process would miss the broader context of any particular incident, notably organisational, cultural, and systemic factors, \citep{hatton1995reflection}.  Further it would not seek to enact transformative change.
+
+\section{Reflective analysis using an established framework} 
+\label{sec:reflective-analysis-using-framework}
+Established reflective frameworks such as Gibbs' Reflective Cycle, \citep{gibbs1988learning}, and Schön's Reflective Practice, \citep{schon2017reflective} are embedded in sectors such as teaching and healthcare.  These frameworks are less established in a policing context.
+
+\citet{sow2025critical} apply what they refer to as the "What Model" to established frameworks such as Gibbs' Reflective Cycle, \citep{gibbs1988learning} and Kolb's Experiential Learning Cycle, \citep{kolb1984experiential}.  
+
+The "What Model" is a direct reflection of the previously noted incident learning cycle.  From a sentimental perspective, the union of this model with an established framework affords me a sense of continuity to my initial police training whilst encouraging critical reflection.  Accordingly, I will be applying Gibbs' Reflective Cycle, incorporating the "What Model" in my reflections on my professional context.  This combined model can be seen in figure \ref{fig:gibbs_inc_what_now}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/gibbs_inc_what_model.png}
+    \caption{Gibbs' Reflective Cycle, incorporating the What Model, \citep{sow2025critical}.}
+    \label{fig:gibbs_inc_what_now}
+\end{figure}
+
+\section{My professional practice and role} 
+\label{sec:my-professional-practice-and-role}
+My core role requires a blend of technical knowledge, operational police experience, project management and stakeholder engagement skills.  These skills are required to deliver innovation to forty-three different police forces across England and Wales, each of which has its own culture, priorities, and ways of working.
+
+Experience within my current role reveals significant gaps in technical literacy, management and strategic planning across policing.  This gap is present throughout all ranks of policing from front line officers who, whilst being digital natives, often lack understanding of "how" technology works and why it may fail in an operational context, through to senior leaders who, by virtue of generational and experiential factors, are often technophobic and resistant to change, despite often wanting to see technology utilised effectively within their organisations.  These are observations that are supported in research, \citep{laufs2022technological, kassem2025their}.
+
+This cultural position results in me frequently delivering into environments that simultaneously wants technological change but are caught in a moment of inertia due to a lack of understanding and technical expertise.  This conflict is both frustrating and exciting; it is frustrating to see an institution like policing struggle to adapt to modern technological realities, but it is simultaneously exciting and challenging due to the opportunity within the role to make a significant positive impact on policing practice.
+
+My secondary role is undertaken through frequent periods of "on-call" and weekend working where I lead the operational detective teams across Norfolk Constabulary.  This role is more traditional from a policing perspective and, viewed from the lens of my core role, often lays bare the challenges within policing practice that are hindered by the previously mentioned lack of technical literacy or strategic technical planning.
+
+Frequent self-labelling by colleagues referring to themselves as "luddites" or "not technical" highlights cultural challenges. These protective statements preemptively excuse disengagement, positioning speakers as unable rather than unwilling to adapt.
+
+Considering the "What happened?" and the "What does this mean?" stages of my chosen reflective framework reveals the tension between my two roles.  I am driving technical change across a fascinating policing landscape, but I simultaneously see the implementation barriers that exist which hinder my core role's success.    Further reflection suggests that I have a personal passion for solutionism and technology which may bias my approach to my core role, favouring technological solutions over cultural or procedural change.
+
+\section{Tacit and explicit knowledge in my practice} 
+\label{sec:tacit-and-explicit-knowledge-in-my-practice}
+\citet{smith2001role} discusses the difference between tacit and explicit knowledge in professional practice.  Tacit knowledge is described as being intuitive and automatic, being developed through experience and exposure to professional circumstances.  Explicit knowledge is noted as being more formalised and structured, it is knowledge which can be codified recorded for sharing with others.
+
+A combination of tacit and explicit knowledge is required from multiple disciplines in order to deliver against the responsibilities of my core role as described in section \ref{sec:my-professional-practice-and-role}.  
+
+My explicit policing knowledge base includes two promotion exams, a detective qualification, and multiple specialist training courses.  Since 2016 I have focussed my policing career into a technical niche, which has resulted in the completion of further technical and academic qualifications. 
+
+Considering tacit knowledge, the \gls{toex} webpage, \url{https://www.toexprogramme.co.uk/}, documents the operational delivery and outcomes which I have led on in the preceding three years, and I know from professional and personal relationships that I am considered as a "solid and steady hand" from an operational policing perspective.
+
+Aligning these comments to the definitions given by \citet{smith2001role}, I can assert that I have accumulated explicit knowledge through formal learning in addition to having the breadth of experience in operational delivery to claim tacit knowledge.  Considering the "What does this mean?" element of the modified Gibbs' cycle, I can reflect that at this current time I am successful as I have currency with both tacit and explicit knowledge across both technical and policing domains.  However, given the fast pace of technological change, and the extremely fluid nature of the policing landscape, \citep{homeoffice2024reform}, this currency is easily lost without continued learning and delivery in both domains.
+
+\citet{gundhus2013experience} identifies the clash between tacit "street" knowledge and  explicit "book" knowledge across policing culture, with the former being more highly valued by operational police officers.  Whilst the reasons for this are out of scope for this paper, I can reflect that this cultural bias towards tacit knowledge may hinder my success in my core role.  Thus far, my delivery credibility has been bolstered by my operational experience, but as I progress in my career, and move increasingly away from operational policing into technical delivery, I may find that this cultural bias towards tacit knowledge hinders my ability to lead technical change; I run the risk of being "just a techie" to policing colleagues, and "not technical enough" to technical colleagues.
+
+Section \ref{sec:initial-problem-statement} suggests a practice gap between technological potential and operational capability which exposes limitations in proactive safeguarding in the \gls{csam} space.  Reflecting on this through the lens of tacit and explicit knowledge highlights that this gap may be influenced by the lack of explicit technical knowledge across policing, and the cultural bias towards tacit "street" knowledge.
+
+\section{Illustrative examples and experiential evidence}
+\label{sec:illustrative-and-experiential-evidence}
+The "What Model" noted in figure \ref{fig:gibbs_inc_what_now} leads with a description of "What Happened".  This section provides two examples from my professional practice which led to the identification of the initial problem statement in section \ref{sec:initial-problem-statement}.
+
+\subsection{Analytical methods in a murder investigation}
+\label{subsec:analytical-methods-in-a-murder-investigation}
+In summer 2020, I attempted novel analysis and visualisation of digital communications in a murder enquiry.  My task was to seek patterns in language and conversation between the suspect and the victim to assist in proving or disproving the suspect's assertion that he was suffering from a mental health crisis at the time of the offence.  The analysis, when aligned to witness statements, suggested the defendant was not suffering from any mental health issues, and that the murder was motivated by anger and jealousy.
+
+Whilst I was pleased with the outcome of the analysis, frustratingly the output was not submitted in evidence as I had failed to consider the broader implications of the use of technology in this context: I had not engaged with the \gls{cps} to explore how the technical analysis might be challenged or how it could be explained in simple terms to a jury.  I had not considered the potential for how the use of the developed tool or its findings may be challenged by an expert witness, \citep{lawcommission2011expert}, and I had not fully documented the methodology used.  This reveals a professional naivety in pre-supposing how I could improve investigative practice with technology without considering the potential limitations and challenges.
+
+\subsection{Widespread online grooming of children}
+\label{subsec:widespread-online-grooming-of-children}
+In late 2022, following the conclusion of a complex investigation into the widespread online grooming and abuse of children, an opportunity arose to test \gls{nlp} technology as part of an academic trial, \citep{swansea2023dragon}, to determine if police officer time and welfare could be protected in similar cases.
+
+Having learned from the experiences noted in subsection \ref{subsec:analytical-methods-in-a-murder-investigation}, I engaged in this opportunity at the conclusion of the investigation, ensuring that I could engage with stakeholders outside of the pressure of a "live" investigation and to allow space to fully consider the implications of any technical opportunities.
+
+The analysis was partly successful in identifying grooming conversations however, when I considered the application of this technology to live investigation or safeguarding contexts, I could not find a use case that would meaningfully enhance policing practice which would justify the effort to tackle the hurdles noted in subsection \ref{subsec:analytical-methods-in-a-murder-investigation}.
+
+I was however encouraged by the potential merging of concepts from both the \citet{swansea2023dragon} research and the conversation analytics undertaken in subsection \ref{subsec:analytical-methods-in-a-murder-investigation} to potentially identify communication markers indicating imminent contact sex offending.
+
+Whilst these two examples formed part of the journey in identifying the initial problem statement, it is significant that both incidents resulted in successful prosecutions without the novel use of technical solutions, potentially highlighting that the problem area may not be one of necessity, but of enhancement to policing practice, and that the challenges in embedding improved practice through technology in both policing and in the wider \gls{cjs} may require a longer term evidence based approach to change as opposed to seeking technological fixes to immediate problems; the enthusiasm for such solutions potentially being symptomatic of my solutionism bias noted in section \ref{sec:my-professional-practice-and-role}.
+
+%--------S.3 The Problem Area--------
+\chapter{Critical analysis of practice and context} 
+\label{ch:critical-analysis-of-practice-and-context}
+This chapter considers the broader organisational and structural factors which influence the problem statement defined in section \ref{sec:initial-problem-statement} and explores how these factors influence my professional practice.
+
+\section{People, power dynamics and cultural influences in technical adoption} 
+\label{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption}
+Policing in the UK operates as a hierarchical system, extending from the Home Office through to the \gls{npcc} to individual forces with clearly defined command structures.  These structures generate distinct power dynamics that shape decision-making and cultural norms. However, these cultures vary markedly between commands and across forces, creating a fragmented landscape for national delivery.
+
+My position with the \gls{toex} Programme enables access to senior officers with authority to mandate technical adoption.  However, the observations of \citet{gundhus2013experience}, backed up by my own experience, suggests that the separation of senior officers from "street smart" front line officers introduces a tension, with the front line frequently expressing frustration at the decisions of their senior leaders and then presenting as resistant to change.
+
+Reflecting on these dynamics and considering the "So what?" stage of the reflective cycle, I can consider that to deliver technical change effectively at scale, it is necessary to inhabit a dual insider / outsider role; there is a need to be outside the tacit knowledge heavy front line culture in order to introduce novel approaches and technologies, but there is also a need to be inside that culture to understand the challenges and to build trust and credibility.  This duality is difficult to maintain, and I often feel pulled between the two requirements.
+
+\section{Organisational structures and barriers} 
+\label{sec:organisational-structures-and-barriers}
+The hierarchical system noted in section \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} has inevitably led to structural complexity across policing.  Each police force operates autonomously with occasional nuance and part collaboration across some departments with neighbouring forces or regions.  This structural complexity was noted by the Home Secretary in her commissioning of police reform, \citep{homeoffice2024reform}.  This complexity is exacerbated by the fluid nature of policing priority changes and the frequent movement of officers and staff between ranks and roles.
+
+The marriage of this structural complexity with the described power and cultural dynamics often leads to frustration as my team and I are repeatedly required to "prove ourselves" to new stakeholders.  Policing demands agility and delivery yet it mires itself in delay due to layers of structural complexity.
+
+The "So what?" stage of the reflective cycle suggests that earlier comments relating to the need to inhabit a dual insider / outsider role is complicated by the structural complexity.  The need to build trust and credibility is made more difficult by needing to navigate various organisational layers and cultures; when this is required on a national scale in the noted fluid landscape, there is a need for constant enthusiasm and energy to maintain momentum and engagement in frequently re-establishing relationships and re-proving value.
+
+Section \ref{sec:tacit-and-explicit-knowledge-in-my-practice} noted the requirement for currency and credibility in engagement with stakeholders.  The structural complexity makes maintaining this currency and credibility more difficult, as the need to re-establish relationships and re-prove value detracts from the time available to maintain currency in both technical and policing domains.
+
+This conundrum requires a more strategic approach to relationship management and stakeholder engagement to mitigate these challenges.
+
+\section{Assumptions, values, and constraints} 
+\label{sec:assumptions-values-and-constraints}
+Section \ref{sec:my-professional-practice-and-role} identifies my solutionism bias.  I believe that this is an inherent trait for individuals working in policing where the cadence of having to immediately solve a conveyor belt of criminal incidents, safeguarding requirements and other challenges results in a mindset of fixing the problem of the "here and now" and then moving onto the next challenge.
+
+Whilst this approach is necessary for the effective functioning of policing, it can lead to a lack of strategic thinking and planning, particularly in areas such as technology adoption where longer term planning and investment is required to achieve meaningful change.
+
+Policing is not an "intelligent consumer" of technology. Industry commentary from \citet{pds2020strategy} notes,
+
+\say{...leaders of tomorrow will need to endorse and demonstrate a genuine understanding of how to place digital at the centre of modern policing; this will require significant investment in their development.}
+
+Despite this aspiration, policing leadership lacks genuine technological understanding, frequently hypothesising possibilities rather than defining requirements based on organisational need.  
+
+This approach leads to a poorly evidenced assumption that technology can solve a large slice of policing problems without the necessary strategic planning, investment, and cultural change required to embed technology effectively.
+
+This flawed approach marries poorly with my natural tendency to want to solutionise problems with technology; I find myself frustrated at the lack of understanding and technological strategic planning, yet simultaneously, I lean into the short term demands of senior leaders by naturally seeking immediate solutions.
+
+I believe this paradigm is unhelpful and ultimately hinders evidence based and thoughtful planning to tackle defined problems with considered technical solutions.  This tension is something that I will need to manage carefully as I progress my research.
+
+\section{Refining the problem or area} 
+\label{sec:refining-the-problem-or-area}
+Section \ref{sec:initial-problem-statement} noted the gap between technological potential and operational capability in the \gls{cse} context.  This gap exposes limitations around proactive safeguarding opportunities, and results in policing retaining a predominantly reactive posture in identifying offenders only after harm has occurred.
+
+Subsequent reflection suggests that this gap is influenced by the structural complexity of policing, the lack of technical strategic literacy across policing leadership, a cultural preference for tacit over explicit knowledge, and my own solutionism bias, reinforced by a policing necessity to solve immediate problems.
+
+Whilst section \ref{sec:initial-problem-statement} focusses on the potential of a \gls{nlp} solution to identify precursors of contact sex offending against children and thus enhance proactive safeguarding opportunities, the reflective process suggests that solutionism without simultaneously addressing a broader implementation strategy is unlikely to achieve meaningful change.
+
+A refined problem area suggests that the development of a \gls{nlp} solution can be a primary focus for research, however, as the core purpose of a Professional Doctorate is to achieve meaningful change in professional practice, section \ref{sec:initial-problem-statement} needs to be expanded to also consider an implementation strategy that addresses the identified structural, cultural, and knowledge challenges in policing.
+
+A refreshed problem statement can therefore be noted as:
+
+\textit{How can natural language processing methods be developed and operationalised to identify precursors of contact sex offending against children, to enhance proactive safeguarding opportunities within the existing operational constraints of policing?}
+
+This problem statement poses three distinct challenges:
+
+\begin{enumerate}
+    \item The technical development of an \gls{nlp} solution.
+    \item The design of that solution so it can integrate with existing policing operational processes.
+    \item The development of an implementation strategy that addresses the structural, cultural, and knowledge challenges.
+\end{enumerate}
+
+This refined problem statement explores the gap between the "So what?" and "Now what?" stages of the reflective cycle, suggesting a path that addresses both technical and organisational challenges to achieve meaningful change.  
+
+%--------S.4 Critical Analysis through Reflection--------
+\chapter{Critical interrogation and validation of the problem}  
+\label{ch:critical-interrogation-and-validation-of-the-problem}
+Chapter \ref{ch:critical-interrogation-and-validation-of-the-problem} expands the reflective practice by considering perspectives from outside of my professional context in addition to taking further steps to interrogate my own biases and assumptions.
+
+\section{Cross-sector perspectives on the issue} 
+\label{sec:cross-sector-perspectives-on-the-issue}
+Research by \citet{dunleavy2025data} and \citet{ngai2025natural} identifies \gls{nlp} use across public services including health, crime identification, and sentiment capture.  Persistent themes  around the ethical use of sensitive data and tackling bias in \gls{nlp} models are noted despite the technical successes of \gls{nlp} and other \gls{ai} in these contexts.
+
+Concerns around ethical data use and potential bias are pervasive.  Within my professional context, Constabulary and \gls{npcc} innovation teams continually canvas adjacent sectors such as social care, criminal justice and the probation service for examples of efficiency and practice enhancement through technology however, it is my observation that holistically they all remain paralysed by concerns around data ethics and bias.  I suspect that this reticence to proceed meaningfully with \gls{ai} and \gls{nlp} is symptomatic of a wider generational leadership structure whereby the those in senior leadership roles are from a non-digital native generation and thus are more cautious in embracing new technologies, especially when public trust and ethical considerations are at stake.
+
+The \gls{nhs} is a notable exception, using \gls{ai} across diagnostic contexts, \citep{ai2023nhs}.  It could be argued that the ability to codify biological data into standardised formats has enabled the health sector to more easily adopt \gls{ai} technologies, whereas attempting the same on emotive human behaviours is more challenging.
+
+\section{Why might those solutions not transfer directly?}
+\label{sec:why-might-those-solutions-not-transfer-directly}
+Section \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} described the fragmented nature of policing.  Policing prizes the independence of individual forces, however across the technical space, this independence leads to a lack of consistency in technical literacy and in risk appetite.  Whilst this lack of consistency has been called out as problematic by the Home Office, \citep{homeoffice2024reform}, recent experience of working in this professional context suggests that this inconsistency is likely to persist for the foreseeable future.
+
+Section \ref{sec:cross-sector-perspectives-on-the-issue} considered the experience of the \gls{nhs} in adopting \gls{ai} and \gls{nlp} technologies.  It is clear from material available online, \citep{aiknowledge2023nhs}, that a centralised function across the \gls{nhs} has enabled more streamlined adoption and realisation of \gls{ai} technologies.  This does currently not exist within policing and it is my observation that policing leaders often look to see who might "jump first" in adopting new technologies before they commit their own organisations to change.  
+
+Policing is seeking to deliver a centralised \gls{ai} function, however the fragmentation described in section \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} compounds in how this function is being funded and delivered; factions and divisions within the Home Office, who ultimately fund much of policing exacerbate the fragmented operational policing landscape and further hinder the ability to deliver centralised functions at scale.
+
+Considering the "Now what?" stage of the chosen reflective framework, the barriers noted in sections \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} and \ref{sec:organisational-structures-and-barriers} suggest that any solution developed as part of my research will need to consider how to deliver across a multitude of policing cultures and structures and that a strategy for delivery is as important as the technical solution itself.
+
+\section{Unpacking personal biases and assumptions } 
+\label{sec:unpacking-personal-biases-and-assumptions}
+Section \ref{sec:my-professional-practice-and-role} identified my bias towards solutionism.  I can reflect that this bias has been prevalent throughout my policing career and has been reinforced via my excitement at the potential of technology.  The considerations noted in sections \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} and \ref{sec:organisational-structures-and-barriers} also reveal a negative bias by me held towards the politics and risk averse culture of policing leadership.
+
+Taking these biases around the reflective framework identifies that my bias towards technical solutionism may lead me to overvalue the potential in \gls{ai} and \gls{nlp} technologies in solving linguistic challenges in the \gls{cse} context, especially when it is known that language evolves and that the interplay between victims and offenders is complex and nuanced.
+
+I can also reflect that my negative bias towards the politics and fragmented culture across policing requires careful management; I will need to accept that I cannot change a national culture alone, so for my research to be successful, I will need to work within the existing structures and cultures to achieve meaningful change.
+
+%--------4730 WORDS--------
+\section{Validating the problem post reflection} 
+\label{sec:validating-the-problem-post-reflection}
+Section \ref{sec:initial-problem-statement} defined an initial problem statement which sought to explore how \gls{nlp} technologies could be utilised to identify precursors of contact sex offending against children, thus enhancing proactive safeguarding opportunities within policing.  As part of the reflective journey, this problem statement was refined to enable consideration of how such a solution could be operationalised within the existing constraints of policing.  This section seeks to validate the refined problem statement.
+
+Research by \citet{choi2024digital} and \citet{finkelhor2024prevalence} combined with practice commentary by \citet{npcc2024ucol} support the notion that \gls{cse} remains a significant challenge for policing, and that current operational capabilities are stretched in tackling this challenge.  The Casey review, \citep{casey2025gbcse} reinforces both the demand and police's reactive posture in this space.  
+
+Practical experience with \gls{nlp} trials \citep{swansea2023dragon}, wider research \citep{ngai2025natural} and health sector practice, \citep{aiknowledge2023nhs}, suggest that \gls{ai} and \gls{nlp} technologies can enhance policing practice.
+
+Additionally, ongoing experience in technical delivery through my role with the \gls{toex} Programme suggests that technical innovation to improve practice can be achieved in spite of the challenges that have been described both in practice experience and in research by \citet{laufs2022technological} and \citet{thompson2021missed}.
+
+Cumulatively, these reflections validate the refined problem statement defined in section \ref{sec:refining-the-problem-or-area}:
+
+However, critical reflection requires considering alternative perspectives.  Subsections \ref{subsec:analytical-methods-in-a-murder-investigation} and \ref{subsec:widespread-online-grooming-of-children} provide evidence of successful policing practice in spite of technical innovation, suggesting that the problem area may be one of enhancing policing practice as opposed to solving a critical problem.  It is fair however to note that in spite of these successful prosecutions, experience from within the affected organisation suggests that the resource burden was significant and that as demand in the \gls{cse} space increases, there may be a tipping point where an enhancement project becomes a core capability necessity.
+
+The reflective process has also revealed my own biases towards solutionism and a negative bias towards policing culture in the innovation and technical delivery context.  These biases will require careful management as I progress my research, however, the refined problem statement remains valid.
+
+%-------S.5 Validating the Research Focus--------
+\chapter{Research Focus and supporting questions}  
+\label{ch:research-focus-and-questions}
+This submission commenced with an aspiration to explore a technical \gls{nlp} solution to tackle known issues of demand and safeguarding in policing's tackling of \gls{cse}.  Whilst this aspiration remains, the reflective process, supported by experience in my professional context and academic research, has revealed that a technical solution alone is insufficient to achieve meaningful practice change and that the development of an implementation strategy that addresses the structural, cultural, and knowledge challenges within policing is equally important.  
+
+The refined research problem noted in section \ref{sec:refining-the-problem-or-area} does not present an opportunity to distill a final research question, however a series of supporting sub-questions can be defined which will guide the next stage of my research.
+
+\section{Supporting sub-questions}
+\label{sec:supporting-sub-questions}
+
+The following four questions will be progressed to shape the development of my research.  The questions are related, with technical delivery questions being impacted by organisational and cultural challenges, and vice versa.
+
+\textit{What are the linguistic precursors of contact sex offending against children in conversations between offenders and victims?}
+This question is key to the aspiration of this research which seeks to enhance proactive safeguarding opportunities whilst simultaneously reducing demand on policing resources.  Understanding these linguistic precursors is fundamental to the development of any \gls{nlp} solution which can then be used against policing demand and safeguarding challenges.
+
+\textit{Which developed \gls{nlp} methods can be most effectively realised within a policing environment?}
+Pre-supposing that linguistic precursors to contact sex offending can be identified, this question explores which \gls{nlp} methods can be effectively developed and operationalised within the existing technical infrastructure that exists within policing.
+
+\textit{What are the implementation barriers which exist within policing that may hinder the adoption of \gls{nlp} solutions?}
+Sections \ref{sec:people-power-dynamics-and-cultural-influences-in-technical-adoption} and \ref{sec:organisational-structures-and-barriers} identify structural, cultural, and knowledge challenges within policing which hinder the effective adoption of \gls{nlp} technology at scale.  Understanding these barriers in detail is key to developing an effective implementation strategy that can be applied outside of the previously noted technical context.
+
+\textit{What implementation strategies can be developed to address the identified barriers and thus enable the adoption of \gls{nlp} solutions within policing?}
+This question takes the understanding and analysis from researching around implementation barriers and seeks to develop a strategy, or a series of strategies, which can be applied to enable the operational adoption and use of any final \gls{nlp} solution developed as part of this research.
+
+Taken together, these sub-questions can be visualised as shown in figure \ref{fig:research-questions-diagram}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/research_flow.png}
+    \caption{Research flow diagram illustrating the relationship between sub-questions}
+    \label{fig:research-questions-diagram}
+\end{figure}
+
+\section{Potential contribution to practice}
+\label{sec:potential-contribution-to-practice}
+Answering the research questions in section \ref{sec:supporting-sub-questions} will contribute to professional practice across three domains.
+
+\textbf{First}, identifying linguistic precursors and developing operational \gls{nlp} methods will enable earlier intervention in \gls{cse} cases, shifting policing from a predominantly reactive stance towards proactive safeguarding.  Given the escalating scale of online \gls{cse} \citep{choi2024digital, finkelhor2024prevalence}, even marginal improvement in identifying early safeguarding opportunities represents significant value whilst simultaneously reducing the investigative resource burden.
+
+\textbf{Second}, the research will produce an evidence-based implementation strategy addressing the structural, cultural, and technical literacy barriers identified through this reflective paper.  This strategy can be used to address the gap in policing practice noted both in my professional context and in aligned literature, \citep{laufs2022technological,thompson2021missed}. 
+
+\textbf{Third}, the research advances understanding of \gls{nlp} applications in a policing context, contributing to limited literature within this space and also contributing to an equally sparse set of operational experience around on operationalising \gls{ai} technologies within the legal and ethical constraints of criminal justice systems.
+
+%--------S.6: ETHICS--------
+\chapter{Ethical Considerations}
+\label{ch:ethical-considerations}
+Research in the combined \gls{ai} and \gls{cse} contexts raises significant ethical challenges, particularly considering the vulnerability of child victims, privacy implications and the potential for real world impact on individuals who may never have offended or have been offended against.  The key ethical challenges that arise from this research are considered below.
+
+\section{Key ethical challenges and associated research approaches}
+\label{sec:key-ethical-challenges-and-associated-research-approaches}
+The below headings are not an exhaustive list of the ethical challenges which may arise during this research, they do however represent core areas which will require careful management.
+
+\textbf{Using data captured from vulnerable victims}.  Primary data sources for this research will be communications captured from mobile devices seized during \gls{cse} investigations with no direct victim or offender engagement.  A statutory basis exists for the use of such data via Part 3, Section 35 of the Data Protection Act 2018, \citep{dpa2018hmg}, however it is acknowledged that conversational data does not exist in silos and that captured data will inevitably contain information about non-offending individuals and content on topics that are not relevant to this research, data privacy and data governance will therefore be a key consideration throughout this research.
+
+\textbf{Data privacy and data governance}.  Accepting that conversational data will reference individuals who are not linked in any way to a \gls{cse} context, robust data handling measures will need to be implemented including the reduction of data volumes to only include engagements between victims and offenders and then the subsequent process of anonymisation of any relevant data.  A proposed anonymisation process is visualised in figure \ref{fig:data-anonymisation}.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/data_protection.png}
+    \caption{Proposed data anonymisation process}
+    \label{fig:data-anonymisation}
+\end{figure}
+
+Additionally, secure data storage and management processes will be implemented to ensure that data privacy is maintained throughout the research process.  To that end, \gls{dpia} submissions have been initiated to the relevant data protection officers within my professional context.
+
+\textbf{Bias and transparency in \gls{ai} models}
+The use of \gls{ai} and \gls{nlp} technologies inevitably raises questions around bias and transparency.  Professional experience in delivering technical tools across policing suggests that the questions raised by ethics panels when considering bias and transparency are not consistent, and are often shaped by local demographic, cultural and political factors, many of which are in a semi-permanent state of flux.  At this early stage of the research process, it is proposed that considerations around bias and transparency can be undertaken in two domains.  Domain one would consider an amalgamation of repeated thematic concerns.  Domain two will consider the most objective way of visualising and explaining how any \gls{nlp} solution is processing data and reaching conclusions.
+
+\textbf{Real world impact on individuals}
+The mishandling of policing data can have significant consequences for individuals, examples of which are noted by \citet{gould2020data}.  The obvious risk that presents in the context of this research is the potential for the misidentification of individuals as posing a "real time" risk to a child.  Mitigating this risk requires ensuring that any developed \gls{nlp} solution is deployed with an accompanying implementation strategy that clearly defines the operational context in which the solution can be used, and the limitations of the solution.  This will be a key consideration in answering the fourth supporting sub-question defined in section \ref{sec:supporting-sub-questions}.
+
+%--------S.7: CONCLUSIONS--------
+\chapter{Conclusions}
+\label{ch:conclusions}
+This reflective journey has revealed the complexity of delivering technical aspiration into meaningful practice change in policing.
+
+An initial aspiration to deliver an \gls{nlp} solution to policing has evolved, through the use of my chosen reflective framework, into recognition that there are organisational and cultural to consider in addition to technical ones.
+
+Three critical insights have emerged from this reflection.  First, the gap between a technical ambition and operational capability is shaped by structural fragmentation, limited technical literacy and cultural resistance.  Second, my solutionism bias and negativity towards structural politics requires careful management to ensure that my research remains objective and evidence based, and that it is not led by enthusiasm.  Third, any successful \gls{nlp} implementation demands simultaneous consideration of technical development and an implementation strategy; neither will achieve practice change in isolation. 
+
+\section{Next steps for research}
+\label{sec:next-steps}
+The sub-questions defined in section \ref{sec:supporting-sub-questions} will guide the next stage of my research.  The initial focus will be on answering the first sub-question which seeks to identify linguistic precursors of contact sex offending against children in conversations between offenders and victims.  
+
+Parallel exploration around the breaking down of implementation barriers will also be undertaken; it is noted that my ongoing professional work is conducted in this implementation space and that learnings from this work will inform the research process.
+
+Ethical considerations around vulnerable victim data and algorithmic transparency will be integrated throughout. Data Protection Impact Assessments are underway, providing a framework for responsible data handling.
+
+This research's contribution lies in demonstrating how \gls{nlp} solutions can be embedded within policing's operational, cultural, and structural realities, shifting CSE investigations from reactive practice towards proactive safeguarding.
+
+%----------------------------------------------------------------------
+% Appendices
+%\appendix
+%\chapter{Additional Material}
+%\label{app:additional}
+%Include supplementary tables, derivations, detailed calculations, or code listings.
+%----------------------------------------------------------------------
+\clearpage
+%----------------------------------------------------------------------
+% Bibliography
+\bibliography{C:/Users/UserPC/OneDrive/Desktop/research/bib/master} % Zotero master .bib file
+%----------------------------------------------------------------------
+\end{document}
+
+% --EXAMPLE FORMATTING SNIPPETS--
+
+%\begin{enumerate}
+%    \item Your current position and responsibilities
+%    \item Your organization and sector
+%    \item Brief overview of your professional journey
+%\end{enumerate}
+
+%\begin{itemize}
+%    \item Overview of the research challege / problem area
+%    \item Why the problem exists / persists
+%    \item Observable patterns
+%\end{itemize}
+
+% Example figure
+%\begin{figure}[H]
+%    \centering
+%    % \includegraphics[width=0.7\textwidth]{figures/example.png}
+%    \caption{Example figure caption. Figures should be self-explanatory with descriptive captions.}
+%    \label{fig:example}
+%\end{figure}
+
+% Example table
+%\begin{table}[H]
+%    \centering
+%    \caption{Example table with professional formatting.}
+%    \label{tab:example}
+%    \begin{tabular}{@{}lcc@{}}
+%        \toprule
+%        Parameter & Value & Unit \\
+%        \midrule
+%        Temperature & 25.3 & °C \\
+%        Pressure & 1.01 & bar \\
+%        Flow rate & 2.5 & L/min \\
+%        \bottomrule
+%    \end{tabular}
+%\end{table}
